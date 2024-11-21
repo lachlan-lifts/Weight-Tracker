@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="add-entry-form" class="form-container">
+            <h2>Add Weight Entry</h2>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="target-weekly-rate">Target Weekly Rate (%):</label>
+            <input type="number" id="target-weekly-rate" placeholder="Enter target rate">
+
+            <button id="add-entry">Add Entry</button>
+        </div>
+
+        <div id="controls">
+            <button id="toggle-add-entries">Toggle Add Entry Form</button>
+            <select id="timeframe-select">
+                <option value="all">All Time</option>
+                <option value="1year">Last Year</option>
+                <option value="6months">Last 6 Months</option>
+                <option value="3months">Last 3 Months</option>
+                <option value="1month">Last 1 Month</option>
+            </select>
+        </div>
+
+        <!-- Two separate canvases for the graphs -->
+        <div id="graphs-container">
+            <canvas id="weight-chart"></canvas>
+            <canvas id="rate-chart"></canvas>
+        </div>
+
+        <div id="weight-list-container">
+            <button id="toggle-edit-entries">Toggle Edit Entries</button>
+            <ul id="weight-list"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
